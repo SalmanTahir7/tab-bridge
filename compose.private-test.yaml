@@ -1,0 +1,6 @@
+# Use only before public launch; never combine with the public profile.
+services:
+  app:
+    ports: [127.0.0.1:3000:3000]
+    environment:
+      BEHIND_TUNNEL: "false"

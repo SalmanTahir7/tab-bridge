@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Bridge",
+  "version": "2.0.0",
+  "description": "Send selected tabs with encrypted, accountless transfers or copy URLs locally.",
+  "permissions": ["tabs", "menus", "clipboardWrite"],
+  "background": {"scripts": ["background.js"]},
+  "action": {"default_title": "Tab Bridge", "default_popup": "popup.html"},
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tab-bridge@personal.example",
+      "strict_min_version": "128.0"
+    }
+  }
+}

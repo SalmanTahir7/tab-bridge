@@ -1,0 +1,1 @@
+(function(){"use strict";window.addEventListener("tab-bridge-ready",async()=>{try{const t=await browser.runtime.sendMessage({type:"get-tab-bridge-draft"});t&&window.dispatchEvent(new CustomEvent("tab-bridge-draft",{detail:JSON.stringify(t)}))}catch{}})})();

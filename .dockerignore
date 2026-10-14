@@ -1,0 +1,8 @@
+node_modules
+dist
+server-dist
+extension-dist
+.git
+.env
+secrets
+*.log

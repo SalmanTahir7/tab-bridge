@@ -1,0 +1,38 @@
+{
+  "name": "tab-bridge",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "demo": "node scripts/demo.mjs",
+    "dev": "vite --configLoader native --host 127.0.0.1",
+    "dev:api": "npm run build:server && node --env-file=.env server-dist/main.js",
+    "build:server": "tsc -p tsconfig.server.json && node scripts/copy-schema.mjs",
+    "build": "tsc --noEmit && npm run build:server && vite build --configLoader native && node scripts/build-extension.mjs",
+    "start": "node --env-file=.env server-dist/main.js",
+    "test": "vitest run --configLoader native",
+    "test:db": "vitest run --configLoader native tests/postgres.test.ts",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/helmet": "^13.0.2",
+    "@fastify/static": "^10.1.6",
+    "fastify": "^5.6.0",
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vitest": "^5.0.4"
+  }
+}

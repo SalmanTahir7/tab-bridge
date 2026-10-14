@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tab Bridge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">FIREFOX UTILITY</div>
+      <h1>Tab Bridge</h1>
+      <p>Move tabs between computers. No account needed.</p>
+      <button id="encrypted-transfer" type="button">Encrypted transfer / receive code</button>
+    </header>
+
+    <section aria-labelledby="export-heading">
+      <h2 id="export-heading">1. Copy tabs</h2>
+      <p>Ctrl/Shift-click tabs, then right-click one and choose <strong>Tab Bridge: Copy selected tab links</strong>.</p>
+      <div class="actions">
+        <button id="copy-selected" type="button">Copy selected tabs</button>
+        <button id="copy-all" class="secondary" type="button">Copy all tabs</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="import-heading">
+      <h2 id="import-heading">2. Open tabs</h2>
+      <label for="url-list">Paste one link per line (or a plain text list)</label>
+      <textarea id="url-list" spellcheck="false" placeholder="https://example.com\nhttps://developer.mozilla.org"></textarea>
+      <div class="summary"><span id="count">0 valid links</span><span>Up to 100 at once</span></div>
+      <button id="open-tabs" type="button" disabled>Open tabs</button>
+    </section>
+
+    <div id="status" role="status" aria-live="polite"></div>
+    <footer>Local copy/import stays on this computer. Encrypted transfers use the configured Tab Bridge website. Only HTTP(S) links are accepted.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
